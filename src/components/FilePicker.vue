@@ -21,6 +21,9 @@ function onChange(e: Event) {
 
 <template>
   <div>
-    <input type="file" accept=".key" @change="onChange" />
+    <label class="form-label">
+      AviUtl のキーコンフィグファイル (aviutl.key) を指定してください。
+    </label>
+    <input class="form-control" type="file" accept=".key" @change="onChange" />
   </div>
 </template>

@@ -55,23 +55,25 @@ watch(
 </script>
 
 <template>
-  <table>
-    <thead>
-      <tr>
-        <th>コマンド</th>
-        <th>キー</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="item in keyConfigs" :key="item.command.id">
-        <td>{{ item.command.fullName }}</td>
-        <td>
-          <template v-if="item.key.shift"> <kbd>Shift</kbd> + </template>
-          <template v-if="item.key.ctrl"> <kbd>Ctrl</kbd> + </template>
-          <template v-if="item.key.alt"> <kbd>Alt</kbd> + </template>
-          <kbd>{{ item.key.name }}</kbd>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col" align="right">キー</th>
+          <th scope="col">コマンド</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in keyConfigs" :key="item.command.id">
+          <td align="right">
+            <template v-if="item.key.shift"> <kbd>Shift</kbd> + </template>
+            <template v-if="item.key.ctrl"> <kbd>Ctrl</kbd> + </template>
+            <template v-if="item.key.alt"> <kbd>Alt</kbd> + </template>
+            <kbd>{{ item.key.name }}</kbd>
+          </td>
+          <td>{{ item.command.fullName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>

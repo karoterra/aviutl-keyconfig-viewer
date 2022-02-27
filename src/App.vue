@@ -8,8 +8,15 @@ const file: Ref<File | null> = ref(null);
 </script>
 
 <template>
-  <main>
-    <FilePicker v-model="file" />
-    <KeyConfigList :file="file" />
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">AviUtl Key Config Viewer</a>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <FilePicker class="mt-3" v-model="file" />
+    <KeyConfigList class="mt-3" :file="file" />
   </main>
 </template>
